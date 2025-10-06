@@ -10,6 +10,8 @@ df = pd.read_csv("bringen.csv", encoding="cp949").dropna(subset=["Meaning", "Ger
 
 # UTF-8로 다시 저장 (한글, 독일어 모두 안전)
 df.to_csv("words_utf8.csv", encoding="utf-8", index=False)
+
+df = pd.read_csv("words_utf8.csv", encoding="utf-8")
     
 # 상태 초기화
 if "score" not in st.session_state:
